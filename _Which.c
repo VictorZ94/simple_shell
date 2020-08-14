@@ -57,7 +57,7 @@ char *_witch(char *av)
 	int x, check = 0;
 
 	dir = _getenv("PATH");
-	duplicate = strdup(dir);
+	duplicate = _strdup(dir);
 	token = strtok(duplicate, ":");
 	if (av == NULL)
 		return (NULL);
@@ -65,10 +65,10 @@ char *_witch(char *av)
 	{
 		while (token != NULL)
 		{
-			tmp = strdup(token);
-			tmp = strcat(tmp, "/");
+			tmp = _strdup(token);
+			tmp = _strcat(tmp, "/");
 
-			tmp = strcat(tmp, av);
+			tmp = _strcat(tmp, av);
 
 			if (PathCheck(tmp) == 0)
 			{
