@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
 extern char **environ;
 char *_getenv(const char *name)
 {
@@ -26,8 +27,7 @@ char *_getenv(const char *name)
     return (NULL);
 }
 
-int find(char *str)
-{
+int PathCheck(char *str)
       struct stat st;
 
       if (stat(str, &st) == 0)
