@@ -17,5 +17,7 @@ extern char **environ;
 char *_getenv(const char *name);
 int PathCheck(char *str);
 char *_witch(char *av);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
 
 #endif /* SHELL_SIMPLE */
