@@ -14,6 +14,11 @@ Shell works the follow standard files descriptor POSIX.
 |       1         |standard output| STOUT_FILENO |   stdout     |
 |       2         |standard error | STERR_FILENO |   stderr     |
 
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
+
 
 ### Process 
 
@@ -28,27 +33,27 @@ The shell interprets the words it reads according to a language, the specificati
 
 If a simple command has been recognized, the shell performs the following actions:
 
-      1. Leading words of the form “name=value” are stripped off and assigned to the environment of the simple command.  Redirection operators and their arguments (as described below) are stripped off and saved for processing.
+1. Leading words of the form “name=value” are stripped off and assigned to the environment of the simple command.  Redirection operators and their arguments (as described below) are stripped off and saved for processing.
 
-      2. The remaining words are expanded as described in the section called “Expansions”, and the first remaining word is considered the command name and the command is located.  The remaining words are considered the arguments of the command. If no command name resulted, then the “name=value” variable assignments recognized in item 1 affect the current shell.
+2. The remaining words are expanded as described in the section called “Expansions”, and the first remaining word is considered the command name and the command is located.  The remaining words are considered the arguments of the command. If no command name resulted, then the “name=value” variable assignments recognized in item 1 affect the current shell.
 
-      3. Redirections are performed as described in the next section.
+3. Redirections are performed as described in the next section.
 
 ## How to use this program.
 
-      1. Clone the repo is your terminal.
-      >You must have git installed.
+1. Clone the repo is your terminal.
+>You must have git installed.
 
-      ` git clone https://github.com/VictorZ94/simple_shell.git  `
+` git clone https://github.com/VictorZ94/simple_shell.git  `
 
-      2. Compile the program.
-      >You must have gcc installed
+2. Compile the program.
+>You must have gcc installed
 
-      ` gcc -Wall -Werror -wextra -pedantic -o mysh `
+` gcc -Wall -Werror -wextra -pedantic -o mysh `
 
-      3.  Execute your program.
+ 3.  Execute your program.
 
-      ` ./mysh `
+` ./mysh `
 
 ### FlowChart
 
@@ -70,6 +75,7 @@ cond2(yes)->cond3
 cond2(no)->op3
 cond3(yes)->op2
 cond3(no)->e
+
 ```
 
 > all rigth reserved 
