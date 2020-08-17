@@ -6,7 +6,7 @@ int main(void)
     ssize_t read = 0;
     char *line = NULL, *directory = NULL;
     char **readline;
-    int checkLine = 0, tlen = 0, i;
+    int checkLine = 0, tlen = 0;
 
     do
     {
