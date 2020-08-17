@@ -19,5 +19,6 @@ int PathCheck(char *str);
 char *_witch(char *av);
 char *_strdup(char *str);
 char *_strcat(char *dest, char *src);
+void execute(char *token, char **argv, int check);
 
 #endif /* SHELL_SIMPLE */
