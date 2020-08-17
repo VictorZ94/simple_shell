@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-	int check = 0, status = 0, i = 0;
-	pid_t my_pid;
+	int check = 0, i = 0;
 	ssize_t read = 0;
 	size_t len[BUFFSIZE];
 	char *line = NULL, *argv[BUFFSIZE];
@@ -25,8 +24,7 @@ int main(void)
 		}
 		if (line == NULL)
 			continue;
-		token = _strdup(line);
-		token = strtok(token, " \n");
+		token = strtok(line, " \n");
 		if (PathCheck(token) == 0)
 			check = 1;
 		while (token != NULL)
@@ -38,23 +36,11 @@ int main(void)
 		argv[i] = NULL;
 		if (check == 0)
 			token = _witch(argv[0]);
-		my_pid = fork();
-		if (my_pid == -1)
-			exit(EXIT_FAILURE);
-		if (my_pid == 0 && check == 0)
-		{
-			if (execve(token, argv, NULL) == -1)
-				exit(EXIT_FAILURE);
-		}
-		else if (my_pid == 0 && check == 1)
-		{
-			if (execve(argv[0], argv, NULL) == -1)
-				exit(EXIT_FAILURE);
-		}
-		else
-			wait(&status);
+
+		execute(token, argv, check);
 		check = 0;
 		i = 0;
 	} while (isatty(STDIN_FILENO) == 1);
+	free(line);
 	return (0);
 }
