@@ -9,7 +9,7 @@ Shell works the follow standard files descriptor POSIX.
 
 
 | File descriptor | Purpose       |  POSIX name  | stdio stream |
-| :------------ : |:-------------:|:------------:|:------------:|
+|   ------------  | ------------- | ------------ | ------------ |
 |       0         |standard input | STDIN_FILENO |   stdin      |
 |       1         |standard output| STOUT_FILENO |   stdout     |
 |       2         |standard error | STERR_FILENO |   stderr     |
