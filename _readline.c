@@ -13,7 +13,7 @@ int verifyLine(ssize_t value)
 char **_readline(char *line)
 {
     char **arguments;
-    
+
     arguments = tokenizer(line);
     extraFunctions(arguments);
     return (arguments);
