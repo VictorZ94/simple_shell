@@ -22,6 +22,5 @@ int main(void)
         tlen = tokeLen(line);
         directory = startEnv(readline[0]);
         _execve(directory, readline);
-        free(readline);
     } while (isatty(STDIN_FILENO) == 1);
 }
