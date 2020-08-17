@@ -19,5 +19,5 @@ int main(void)
         readline = _readline(line);
         directory = startEnv(readline[0]);
         _execve(directory, readline);
-    } while (isatty(STDIN_FILENO) == 1); 
+    } while (isatty(STDIN_FILENO) == 1);
 }

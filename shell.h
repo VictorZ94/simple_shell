@@ -23,8 +23,11 @@ char **_readline(char *line);
 int verifyLine(ssize_t value);
 char **tokenizer(char *line);
 char *startEnv(char *line);
+char *_getenv(const char *name);
 int tokeLen(char *line);
 char *findPath(char *av);
 void _execve(char *directory, char **arguments);
 int PathCheck(char *str);
+char *_strdup(char *str);
+char *_strcat(char *dest, char *src);
 #endif /* SHELL_SIMPLE */

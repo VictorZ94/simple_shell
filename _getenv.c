@@ -26,7 +26,6 @@ char *_getenv(const char *name)
 	write(STDOUT_FILENO, "ERROR ", 6);
 	return (NULL);
 }
-
 /**
  * PathCheck - function checks if an directory exist or not
  * @str: string directory to check
@@ -56,7 +55,7 @@ char *findPath(char *av)
 	int x, check = 0;
 
 	dir = _getenv("PATH");
-	duplicate = strdup(dir);
+	duplicate = _strdup(dir);
 	token = strtok(duplicate, ":");
 	if (av == NULL)
 		return (NULL);
@@ -64,10 +63,10 @@ char *findPath(char *av)
 	{
 		while (token != NULL)
 		{
-			tmp = strdup(token);
-			tmp = strcat(tmp, "/");
+			tmp = _strdup(token);
+			tmp = _strcat(tmp, "/");
 
-			tmp = strcat(tmp, av);
+			tmp = _strcat(tmp, av);
 
 			if (PathCheck(tmp) == 0)
 			{
