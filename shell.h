@@ -11,13 +11,20 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define BUFFSIZE 1024
+typedef struct argumentList{
+    char *arg;
+    struct argumentList *next;
+}node;
+
 /*----- enviroment variable ---- */
 extern char **environ;
 
-char *_getenv(const char *name);
+char **_readline(char *line);
+int verifyLine(ssize_t value);
+char **tokenizer(char *line);
+char *startEnv(char *line);
+int tokeLen(char *line);
+char *findPath(char *av);
+void _execve(char *directory, char **arguments);
 int PathCheck(char *str);
-char *_witch(char *av);
-char *_strdup(char *str);
-char *_strcat(char *dest, char *src);
-
 #endif /* SHELL_SIMPLE */
