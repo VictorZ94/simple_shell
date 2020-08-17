@@ -5,7 +5,7 @@
 
 Shell is a program's computer that receives commands from prompt of the terminal. This program reads lines from either a file or the terminal, interprets them, and generally executes other commands.
 
-Shell works the follow standard files descriptor POSIX.
+Shell works with the follow standard files descriptor POSIX.
 
 
 | File descriptor | Purpose       |  POSIX name  | stdio stream |
