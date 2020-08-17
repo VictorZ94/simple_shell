@@ -2,7 +2,7 @@
 
 char **tokenizer(char *line)
 {
-    int x = 0, tokenLen = 0, y = 0;
+    int x = 0, tokenLen = 0;
     char **arguments;
     char *token = NULL;
 

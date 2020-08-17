@@ -4,7 +4,6 @@ void _execve(char *directory, char **arguments)
 {
 	pid_t my_pid;
 	int status = 0;
-    int x = 0;
 
 	my_pid = fork();
 	if (my_pid == -1)

@@ -93,7 +93,8 @@ char *startEnv(char *line)
     char *directory = NULL;
     int check = 1;
 
-    if (check = PathCheck(line) == 0)
+	check = PathCheck(line);
+    if (check == 0)
         return (line);
     directory = findPath(line);
     if (directory == NULL)
