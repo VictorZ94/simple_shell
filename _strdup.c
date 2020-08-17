@@ -21,7 +21,6 @@ char *_strdup(char *str)
 	p = malloc(sizeof(char) * i + 1); /* is not necesary to put space to NULL */
 	if (!p)
 	{
-		free(p);
 		return ('\0');
 	}
 

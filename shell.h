@@ -31,4 +31,5 @@ int PathCheck(char *str);
 char *_strdup(char *str);
 void extraFunctions(char **argv);
 char *_strcat(char *dest, char *src);
+void _free(char **line);
 #endif /* SHELL_SIMPLE */

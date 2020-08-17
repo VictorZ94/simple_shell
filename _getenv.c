@@ -49,6 +49,12 @@ int PathCheck(char *str)
  *
  * Return: On success a pointer path, Otherwise NULL.
  */
+/**
+ * _witch - funtion return the path whether it exist.
+ * @av: string directory.
+ *
+ * Return: On success a pointer path, Otherwise NULL.
+ */
 char *findPath(char *av)
 {
 	char *token, *tmp, *dir, *duplicate;

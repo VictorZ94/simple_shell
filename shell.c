@@ -4,7 +4,7 @@ int main(void)
 {
     size_t len[BUFFSIZE];
     ssize_t read = 0;
-    char *line, *directory;
+    char *line = NULL, *directory = NULL;
     char **readline;
     int checkLine = 0;
 
