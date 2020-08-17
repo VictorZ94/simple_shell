@@ -14,11 +14,6 @@ Shell works with the follow standard files descriptor POSIX.
 |       1         |standard output| STOUT_FILENO |   stdout     |
 |       2         |standard error | STERR_FILENO |   stderr     |
 
-| Function name | Description                    |
-| ------------- | ------------------------------ |
-| `help()`      | Display the help window.       |
-| `destroy()`   | **Destroy your computer!**     |
-
 
 ### Process 
 
@@ -56,27 +51,6 @@ If a simple command has been recognized, the shell performs the following action
 ` ./mysh `
 
 ### FlowChart
-
-```flow
-st=>start: Start
-op=>operation: isatty()
-cond=>condition: getline != EOF?
-cond2=>condition: stat() == 0
-cond3=>condition: fork() == 0
-op2=>operation: execve() == 0
-op3=>operation: command no found
-op4=>operation: Return 0
-e=>end: wait
-
-st->op->cond
-cond(yes)->cond2
-cond(no)->op4
-cond2(yes)->cond3
-cond2(no)->op3
-cond3(yes)->op2
-cond3(no)->e
-
-```
 
 > all rigth reserved 
 
