@@ -66,10 +66,7 @@ char *_witch(char *av)
 		while (token != NULL)
 		{
 			tmp = _strdup(token);
-			tmp = _strcat(tmp, "/");
-
-			tmp = _strcat(tmp, av);
-
+			tmp = _strcat(_strcat(tmp, "/"), av); /* /bin/ */
 			if (PathCheck(tmp) == 0)
 			{
 				check = 1;
@@ -87,5 +84,37 @@ char *_witch(char *av)
 		write(1, ": Command not found\n", 20);
 		return (NULL);
 	}
+	free(duplicate);
 	return (tmp);
+}
+
+/**
+ * execute - program execute a command
+ * @token: first command concatenate
+ * @argv: command without modify
+ * @check: check boolean
+ *
+ * Return: void.
+ */
+void execute(char *token, char **argv, int check)
+{
+	pid_t my_pid;
+	int status = 0;
+
+	my_pid = fork();
+	if (my_pid == -1)
+		exit(EXIT_FAILURE);
+	if (my_pid == 0 && check == 0)
+	{
+		if (execve(token, argv, NULL) == -1)
+			exit(EXIT_FAILURE);
+
+	}
+	else if (my_pid == 0 && check == 1)
+	{
+		if (execve(argv[0], argv, NULL) == -1)
+			exit(EXIT_FAILURE);
+	}
+	else
+		wait(&status);
 }

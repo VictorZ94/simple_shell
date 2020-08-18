@@ -1,6 +1,7 @@
 #include "shell.h"
 /**
  * main
+ * 
  * fix?
  */
 int main(void)
@@ -26,4 +27,6 @@ int main(void)
         directory = startEnv(readline[0]);
         _execve(directory, readline);
     } while (isatty(STDIN_FILENO) == 1);
+
+    return (0);
 }
