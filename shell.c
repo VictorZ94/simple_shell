@@ -1,46 +1,32 @@
 #include "shell.h"
-
 /**
- * main - Enter point simple shell
- *
- * Return: On success 0, Otherwise 1.
+ * main
+ * 
+ * fix?
  */
 int main(void)
 {
-	int check = 0, i = 0;
-	ssize_t read = 0;
-	size_t len[BUFFSIZE];
-	char *line = NULL, *argv[BUFFSIZE];
-	char *token = NULL;
+    size_t len[BUFFSIZE];
+    ssize_t read = 0;
+    char *line = NULL, *directory = NULL;
+    char **readline;
+    int checkLine = 0, tlen = 0;
 
-	do {
+    do
+    {
 		if (isatty(STDIN_FILENO) == 1)
 			write(1, "$ ", 2);
-		read = getline(&line, len, stdin);
-		if (read == EOF)
-		{
-			write(1, "\n", 2);
-			break;
-		}
-		if (line == NULL)
-			continue;
-		token = strtok(line, " \n");
-		if (PathCheck(token) == 0)
-			check = 1;
-		while (token != NULL)
-		{
-			argv[i] = token; /* array of pointers */
-			i++;
-			token = strtok(NULL, " \n");
-		}
-		argv[i] = NULL;
-		if (check == 0)
-			token = _witch(argv[0]);
+        read = getline(&line, len, stdin);
+        checkLine = verifyLine(read);
+        if (*line == '\n')
+            continue;
+        if (checkLine == 1)
+            break;
+        readline = _readline(line);
+        tlen = tokeLen(line);
+        directory = startEnv(readline[0]);
+        _execve(directory, readline);
+    } while (isatty(STDIN_FILENO) == 1);
 
-		execute(token, argv, check);
-		check = 0;
-		i = 0;
-	} while (isatty(STDIN_FILENO) == 1);
-	free(line);
-	return (0);
+    return (0);
 }

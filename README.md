@@ -50,7 +50,5 @@ If a simple command has been recognized, the shell performs the following action
 
 ` ./mysh `
 
-### FlowChart
-
 > all rigth reserved 
 
