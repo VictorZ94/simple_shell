@@ -3,8 +3,7 @@
 void _execve(char *directory, char **arguments)
 {
 	pid_t my_pid;
-	int status = 0, i;
-	char **cmd;
+	int status = 0;
 
 	my_pid = fork();
 	if (my_pid == -1)

@@ -6,7 +6,7 @@ char **tokenizer(char *line)
     char **arguments;
     char *token = NULL;
 
-    arguments = malloc(sizeof(char *) * 1024);
+    arguments = (char **)malloc(sizeof(char *) * BUFFSIZE);
     if (line == NULL)
         return (0);
     tokenLen = tokeLen(line);
