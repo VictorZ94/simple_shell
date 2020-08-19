@@ -6,23 +6,24 @@
  *
  * Return: Pointer to char
  */
-/**
- * _strcat - main
- * @dest: char
- * @src: char
- * Return: dest
- */
 char *_strcat(char *dest, char *src)
 {
-	int aLength = strlen(dest);
-	int counter = 0;
+	int i, j;
 
-	while (src[counter] != '\0')
+	i = 0;
+	while (*(dest + i))
 	{
-		dest[aLength] = src[counter];
-		aLength++;
-		counter++;
+		i++;
 	}
-	return (dest);
+
+	j = 0;
+	while (*(src + j))
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+dest[i] = '\0';
+return (dest);
 }
 
