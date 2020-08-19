@@ -74,7 +74,7 @@ char *findPath(char *av)
 				break;
 			}
 			token = strtok(NULL, ":");
-			free (tmp);
+			free(tmp);
 		}
 		if (check == 1 || token == NULL)
 			break;
@@ -83,30 +83,30 @@ char *findPath(char *av)
 	{
 		write(1, av, strlen(av));
 		write(1, ": command not found\n", 20);
-		free (duplicate);
+		free(duplicate);
 		return (NULL);
 	}
-	free (duplicate);
+	free(duplicate);
 	return (tmp);
 }
 
 /**
- * startEnv - function
- * 
- * 
+ * startEnv - function check path
+ * @line: command
+ *
+ * Return: on sucess line, otherwise NULL
  */
-
 char *startEnv(char *line)
 {
-    char *directory = NULL;
-    int check = 1;
+	char *directory = NULL;
+	int check = 1;
 
 	check = PathCheck(line);
-    if (check == 0)
-	return (line);
-    directory = findPath(line);
-    if (directory == NULL)
-	return (NULL);
+	if (check == 0)
+		return (line);
+	directory = findPath(line);
+	if (directory == NULL)
+		return (NULL);
 
-    return (directory);
+	return (directory);
 }
