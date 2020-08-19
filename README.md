@@ -1,6 +1,6 @@
 # Simple Shell
 
-![](https://img.shields.io/badge/Takeshi%20Ramirez-Holberton__School-red) ![](https://img.shields.io/badge/Victor%20Zuluaga-Holberton__School-red) ![](https://img.shields.io/badge/Linux-Bash-lightgrey) ![](https://img.shields.io/badge/Project-Shell-lightgrey) ![](https://img.shields.io/badge/Release-v1.0-blue) ![](https://img.shields.io/badge/Issues-Memory__leaks-blue)
+![](https://img.shields.io/badge/Tackeshi%20Ramirez-Holberton__School-red) ![](https://img.shields.io/badge/Victor%20Zuluaga-Holberton__School-red) ![](https://img.shields.io/badge/Linux-Bash-lightgrey) ![](https://img.shields.io/badge/Project-Shell-lightgrey) ![](https://img.shields.io/badge/Release-v1.0-blue) ![](https://img.shields.io/badge/Issues-Memory__leaks-blue)
 
 
 Shell is a program's computer that receives commands from prompt of the terminal. This program reads lines from either a file or the terminal, interprets them, and generally executes other commands.
@@ -31,8 +31,6 @@ If a simple command has been recognized, the shell performs the following action
 1. Leading words of the form “name=value” are stripped off and assigned to the environment of the simple command.  Redirection operators and their arguments (as described below) are stripped off and saved for processing.
 
 2. The remaining words are expanded as described in the section called “Expansions”, and the first remaining word is considered the command name and the command is located.  The remaining words are considered the arguments of the command. If no command name resulted, then the “name=value” variable assignments recognized in item 1 affect the current shell.
-# simple_shell
-2
 
 3. Redirections are performed as described in the next section.
 
@@ -51,8 +49,6 @@ If a simple command has been recognized, the shell performs the following action
  3.  Execute your program.
 
 ` ./mysh `
-
-### FlowChart
 
 > all rigth reserved 
 

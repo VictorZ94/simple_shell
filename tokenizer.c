@@ -10,15 +10,14 @@ char **tokenizer(char *line)
     if (line == NULL)
         return (0);
     tokenLen = tokeLen(line);
-    token = strdup(line);
     token = strtok(line, " \n");
     while (x < tokenLen)
     {
-        arguments[x] = malloc(BUFFSIZE);
-        arguments[x] = token;
+        arguments[x] = strdup(token);
         token = strtok(NULL, " \n");
         x++;
     }
+    arguments[x] = '\0';
     return (arguments);
 }
 

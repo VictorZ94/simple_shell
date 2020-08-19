@@ -49,38 +49,32 @@ int PathCheck(char *str)
  *
  * Return: On success a pointer path, Otherwise NULL.
  */
-/**
- * _witch - funtion return the path whether it exist.
- * @av: string directory.
- *
- * Return: On success a pointer path, Otherwise NULL.
- */
 char *findPath(char *av)
 {
 	char *token, *tmp, *dir, *duplicate;
 	int x, check = 0;
 
-	dir = _getenv("PATH");
-	duplicate = _strdup(dir);
-	token = strtok(duplicate, ":");
 	if (av == NULL)
 		return (NULL);
+
+	dir = _getenv("PATH");
+	duplicate = strdup(dir);
+	token = strtok(duplicate, ":");
 	for (x = 1; av[x] ; x++)
 	{
 		while (token != NULL)
 		{
-			tmp = _strdup(token);
-			tmp = _strcat(tmp, "/");
+			tmp = strdup(token);
+			tmp = strcat(tmp, "/");
 
-			tmp = _strcat(tmp, av);
-
+			tmp = strcat(tmp, av);
 			if (PathCheck(tmp) == 0)
 			{
 				check = 1;
 				break;
 			}
 			token = strtok(NULL, ":");
-			free(tmp);
+			free (tmp);
 		}
 		if (check == 1 || token == NULL)
 			break;
@@ -89,10 +83,18 @@ char *findPath(char *av)
 	{
 		write(1, av, strlen(av));
 		write(1, ": command not found\n", 20);
+		free (duplicate);
 		return (NULL);
 	}
+	free (duplicate);
 	return (tmp);
 }
+
+/**
+ * startEnv - function 
+ * 
+ * 
+ */
 
 char *startEnv(char *line)
 {
