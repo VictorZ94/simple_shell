@@ -44,7 +44,7 @@ int PathCheck(char *str)
 }
 
 /**
- * _witch - funtion return the path whether it exist.
+ * findPath - funtion return the path whether it exist.
  * @av: string directory.
  *
  * Return: On success a pointer path, Otherwise NULL.
@@ -91,7 +91,7 @@ char *findPath(char *av)
 }
 
 /**
- * startEnv - function 
+ * startEnv - function
  * 
  * 
  */
@@ -103,9 +103,10 @@ char *startEnv(char *line)
 
 	check = PathCheck(line);
     if (check == 0)
-        return (line);
+	return (line);
     directory = findPath(line);
     if (directory == NULL)
-        return (NULL);
+	return (NULL);
+
     return (directory);
 }
