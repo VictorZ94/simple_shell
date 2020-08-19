@@ -37,12 +37,15 @@ int tokeLen(char *line)
 {
 	int x = 0;
 	char *token;
+	char *str;
 
-	token = strtok(line, " ");
+	str = strdup(line);
+	token = strtok(str, " ");
 	while (token != NULL)
 	{
 		x++;
 		token = strtok(NULL, " ");
 	}
+	free(str);
 	return (x);
 }
