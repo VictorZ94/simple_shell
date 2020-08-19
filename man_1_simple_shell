@@ -49,7 +49,7 @@ There are memory leaks when exiting the shell.
 This will be fixed in a later version of this shell.
 .PP
 .SH AUTHORS
-Victor Zuluaga <>
+Victor Zuluaga <zrvictor@outlook.com>
 
 Takeshi Camilo  <potatogames15@gmail.com>
 .PP
