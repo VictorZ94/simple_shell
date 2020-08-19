@@ -11,10 +11,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define BUFFSIZE 1024
-typedef struct argumentList{
-    char *arg;
-    struct argumentList *next;
-}node;
 
 /*----- enviroment variable ---- */
 extern char **environ;
