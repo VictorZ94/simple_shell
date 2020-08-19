@@ -32,5 +32,6 @@ char *_strdup(char *str);
 void extraFunctions(char **argv);
 char *_strcat(char *dest, char *src);
 void _free(char **line);
+void _freeargs(char **str);
 
 #endif /* SHELL_SIMPLE */
