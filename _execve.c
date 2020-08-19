@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * _execve - function that executes the commands
+ * @directory: directories of path
+ * @arguments: array of pointers
+ *
+ * Return: void
+ */
 void _execve(char *directory, char **arguments)
 {
 	pid_t my_pid;
