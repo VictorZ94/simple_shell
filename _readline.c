@@ -41,10 +41,10 @@ void extraFunctions(char **argv)
 {
 	int x = 0;
 
-	if (strcmp(argv[0], "exit") == 0)
+	if (_strcmp(argv[0], "exit") == 0)
 		exit(EXIT_SUCCESS);
 
-	if (strcmp(argv[0], "env") == 0)
+	if (_strcmp(argv[0], "env") == 0)
 	{
 		while (environ[x])
 		{
