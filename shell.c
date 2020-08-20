@@ -26,7 +26,6 @@ int main(void)
 		_execve(directory, readline);
 		_freeargs(readline);
 	} while (isatty(STDIN_FILENO) == 1);
-	free(directory);
 	free(line);
 	return (0);
 }
