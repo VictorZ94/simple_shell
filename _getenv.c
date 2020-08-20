@@ -58,16 +58,16 @@ char *findPath(char *av)
 		return (NULL);
 
 	dir = _getenv("PATH");
-	duplicate = strdup(dir);
+	duplicate = _strdup(dir);
 	token = strtok(duplicate, ":");
 	for (x = 1; av[x] ; x++)
 	{
 		while (token != NULL)
 		{
-			tmp = strdup(token);
-			tmp = strcat(tmp, "/");
+			tmp = _strdup(token);
+			tmp = _strcat(tmp, "/");
 
-			tmp = strcat(tmp, av);
+			tmp = _strcat(tmp, av);
 			if (PathCheck(tmp) == 0)
 			{
 				check = 1;
@@ -81,7 +81,7 @@ char *findPath(char *av)
 	}
 	if (check == 0)
 	{
-		write(1, av, strlen(av));
+		write(1, av, _strlen(av));
 		write(1, ": command not found\n", 20);
 		free(duplicate);
 		return (NULL);
