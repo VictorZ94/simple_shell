@@ -19,7 +19,7 @@ char **tokenizer(char *line)
 	token = strtok(line, " \n");
 	while (x < tokenLen)
 	{
-		arguments[x] = strdup(token);
+		arguments[x] = _strdup(token);
 		token = strtok(NULL, " \n");
 		x++;
 	}
@@ -39,7 +39,7 @@ int tokeLen(char *line)
 	char *token;
 	char *str;
 
-	str = strdup(line);
+	str = _strdup(line);
 	token = strtok(str, " ");
 	while (token != NULL)
 	{
