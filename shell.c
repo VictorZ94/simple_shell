@@ -24,10 +24,9 @@ int main(void)
 		readline = _readline(line);
 		directory = startEnv(readline[0]);
 		_execve(directory, readline);
-		if (directory != NULL)
-			free(directory);
 		_freeargs(readline);
 	} while (isatty(STDIN_FILENO) == 1);
+	free(directory);
 	free(line);
 	return (0);
 }

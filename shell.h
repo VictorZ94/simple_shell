@@ -29,5 +29,7 @@ void extraFunctions(char **argv);
 char *_strcat(char *dest, char *src);
 void _free(char **line);
 void _freeargs(char **str);
+int _strlen(char *s);
+int _strcmp(const char *s1, char *s2);
 
 #endif /* SHELL_SIMPLE */
