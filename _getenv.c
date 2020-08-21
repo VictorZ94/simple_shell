@@ -89,6 +89,8 @@ char *findPath(char *av, char **argv, int i)
 		_puts(*argv);
 		write(1, ": ", 2);
 		_putchar(i + '0');
+		write(1, ": ", 2);
+		_puts(av);
 		write(1, ": not found\n", 12);
 		free(duplicate);
 		return (NULL);
