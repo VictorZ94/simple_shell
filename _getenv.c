@@ -89,24 +89,3 @@ char *findPath(char *av)
 	free(duplicate);
 	return (tmp);
 }
-
-/**
- * startEnv - function check path
- * @line: command
- *
- * Return: on sucess line, otherwise NULL
- */
-char *startEnv(char *line)
-{
-	char *directory = NULL;
-	int check = 1;
-
-	check = PathCheck(line);
-	if (check == 0)
-		return (line);
-	directory = findPath(line);
-	if (directory == NULL)
-		return (NULL);
-
-	return (directory);
-}
