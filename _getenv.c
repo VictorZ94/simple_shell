@@ -71,7 +71,6 @@ char *findPath(char *av, char **argv, int i)
 		{
 			tmp = _strdup(token);
 			tmp = _strcat(tmp, "/");
-
 			tmp = _strcat(tmp, av);
 			if (PathCheck(tmp) == 0)
 			{

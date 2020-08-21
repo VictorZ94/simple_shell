@@ -25,7 +25,7 @@ char *findPath(char *av, char **argv, int i);
 void _execve(char *directory, char **arguments);
 int PathCheck(char *str);
 char *_strdup(char *str);
-void extraFunctions(char **argv);
+void extraFunctions(char **argv, char *line);
 char *_strcat(char *dest, char *src);
 void _free(char **line);
 void _freeargs(char **str);

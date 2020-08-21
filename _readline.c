@@ -11,17 +11,18 @@ char **_readline(char *line)
 	char **arguments;
 
 	arguments = tokenizer(line);
-	extraFunctions(arguments);
+	extraFunctions(arguments, line);
 	return (arguments);
 }
 
 /**
  * extraFunctions - function that check env and exit
  * @argv: input command
+ * @line: input command
  *
  * Return: void
  */
-void extraFunctions(char **argv)
+void extraFunctions(char **argv, char *line)
 {
 	int x = 0;
 
@@ -29,7 +30,11 @@ void extraFunctions(char **argv)
 		return;
 
 	if (_strcmp(argv[0], "exit") == 0)
+	{
+		free(line);
+		_freeargs(argv);
 		exit(EXIT_SUCCESS);
+	}
 
 	if (_strcmp(argv[0], "env") == 0)
 	{
