@@ -36,11 +36,14 @@ int PathCheck(char *str)
 {
 	struct stat buff;
 
+	if (str == NULL)
+		return (1);
+
 	if (stat(str, &buff) == 0)
 	{
 		return (0);
 	}
-	return (-1);
+	return (1);
 }
 
 /**
