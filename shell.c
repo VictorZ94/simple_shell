@@ -24,7 +24,9 @@ int main(void)
 		else
 			directory = findPath(readline[0]);
 
-		_execve(directory, readline);
+		if (directory != NULL)
+			_execve(directory, readline);
+
 		if (check != 0)
 			free(directory);
 
