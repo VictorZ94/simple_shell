@@ -25,9 +25,10 @@ int main(void)
 			directory = findPath(readline[0]);
 
 		_execve(directory, readline);
-		_freeargs(readline);
-		if (directory != NULL && check != 0)
+		if (check != 0)
 			free(directory);
+
+		_freeargs(readline);
 
 		if (isatty(STDIN_FILENO) == 1)
 		write(1, "$ ", 2);
