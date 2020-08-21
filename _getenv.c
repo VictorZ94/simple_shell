@@ -81,8 +81,8 @@ char *findPath(char *av)
 	}
 	if (check == 0)
 	{
-		write(1, av, _strlen(av));
-		write(1, ": command not found\n", 20);
+		write(1, "./hsh", 6);
+		write(1, ": No such file or directory\n", 29);
 		free(duplicate);
 		return (NULL);
 	}
