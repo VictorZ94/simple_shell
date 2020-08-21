@@ -10,17 +10,13 @@ int main(void)
 	ssize_t read = 0;
 	char *line = NULL, *directory = NULL;
 	char **readline;
-	int checkLine = 0, check;
+	int check;
 
-	do {
-		if (isatty(STDIN_FILENO) == 1)
-			write(1, "$ ", 2);
-		read = getline(&line, &len, stdin);
-		checkLine = verifyLine(read);
-		if (checkLine == 1)
-			break;
-		if (*line == '\n')
-			continue;
+	if (isatty(STDIN_FILENO) == 1)
+		write(1, "$ ", 2);
+
+	while ((read = getline(&line, &len, stdin)) != EOF)
+	{
 		readline = _readline(line);
 		check = PathCheck(readline[0]);
 		if (check == 0)
@@ -32,7 +28,12 @@ int main(void)
 		_freeargs(readline);
 		if (directory != NULL && check != 0)
 			free(directory);
-	} while (isatty(STDIN_FILENO) == 1);
+
+		if (isatty(STDIN_FILENO) == 1)
+		write(1, "$ ", 2);
+	}
+	if (isatty(STDIN_FILENO) == 1)
+		write(1, "\n", 2);
 	free(line);
 	return (0);
 }
