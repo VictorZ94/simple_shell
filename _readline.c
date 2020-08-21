@@ -41,6 +41,9 @@ void extraFunctions(char **argv)
 {
 	int x = 0;
 
+	if (argv == NULL || *argv == NULL)
+		return;
+
 	if (_strcmp(argv[0], "exit") == 0)
 		exit(EXIT_SUCCESS);
 
