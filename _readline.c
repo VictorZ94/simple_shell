@@ -33,7 +33,7 @@ void extraFunctions(char **argv, char *line)
 	{
 		free(line);
 		_freeargs(argv);
-		exit(EXIT_SUCCESS);
+		exit(2);
 	}
 
 	if (_strcmp(argv[0], "env") == 0)
