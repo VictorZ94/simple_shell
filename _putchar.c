@@ -28,3 +28,22 @@ int _puts(const char *s)
 	}
 	return (0);
 }
+
+/**
+ * _puts2 - function that prints an string
+ * @s: string to print
+ *
+ * Return: always 0.
+ */
+int _puts2(const char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		_putchar(s[i]);
+		i++;
+	}
+	_putchar('\n');
+	return (0);
+}

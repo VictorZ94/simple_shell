@@ -23,7 +23,6 @@ char *_getenv(const char *name)
 		x++;
 		y = 0;
 	}
-	write(STDOUT_FILENO, "ERROR ", 6);
 	return (NULL);
 }
 /**
