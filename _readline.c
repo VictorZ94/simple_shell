@@ -33,14 +33,14 @@ void extraFunctions(char **argv, char *line)
 	{
 		free(line);
 		_freeargs(argv);
-		exit(2);
+		exit(127);
 	}
 
 	if (_strcmp(argv[0], "env") == 0)
 	{
 		while (environ[x])
 		{
-			printf("%s\n", environ[x]);
+			_puts2(environ[x]);
 			x++;
 		}
 	}
