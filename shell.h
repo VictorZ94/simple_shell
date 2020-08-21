@@ -34,5 +34,6 @@ int _strcmp(const char *s1, char *s2);
 char *_strtok(char *str, const char *delim);
 int _putchar(int c);
 int _puts(const char *s);
+int _puts2(const char *s);
 
 #endif /* SHELL_SIMPLE */
