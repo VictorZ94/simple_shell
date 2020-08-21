@@ -1,22 +1,6 @@
 #include "shell.h"
 
 /**
- * verifyLine - check if input is different to EOF
- * @value: value len
- *
- * Return: on success 0, otherwhise 1
- */
-int verifyLine(ssize_t value)
-{
-	if (value == EOF)
-	{
-		write(1, "\n", 2);
-		return (1);
-	}
-	return (0);
-}
-
-/**
  * _readline - read a entire line
  * @line: input of getline
  *
