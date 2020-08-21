@@ -12,8 +12,8 @@ char **tokenizer(char *line)
 	char **arguments;
 	char *token = NULL;
 
-	arguments = (char **)malloc(sizeof(char *) * BUFFSIZE);
-	if (line == NULL)
+	arguments = malloc(sizeof(char *) * BUFFSIZE);
+	if (arguments == NULL)
 		return (0);
 	tokenLen = tokeLen(line);
 	token = strtok(line, " \n");
