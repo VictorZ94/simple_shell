@@ -10,8 +10,6 @@ void _freeargs(char **str)
 {
 	int i;
 
-	if ((*str == NULL) | (str == NULL))
-		return;
 	i = 0;
 	while (str[i])
 	{
