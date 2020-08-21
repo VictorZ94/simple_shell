@@ -18,12 +18,11 @@ char *_strdup(char *str)
 	while (str[i])
 		i++;
 
-	p = malloc(sizeof(char) * i + 1024); /* is not necesary to put space to NULL */
+	p = malloc(sizeof(char) * i + 1024);
 	if (!p)
 	{
 		return ('\0');
 	}
-
 	j = 0;
 	while (j <= i)
 	{

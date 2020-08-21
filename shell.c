@@ -31,7 +31,7 @@ int main(void)
 		_execve(directory, readline);
 		_freeargs(readline);
 		if (directory != NULL && check != 0)
-			free (directory);
+			free(directory);
 	} while (isatty(STDIN_FILENO) == 1);
 	free(line);
 	return (0);
