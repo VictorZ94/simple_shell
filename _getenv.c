@@ -49,10 +49,12 @@ int PathCheck(char *str)
 /**
  * findPath - funtion return the path whether it exist.
  * @av: string directory.
+ * @argv: arary of pointers.
+ * @i: count the amount to commands.
  *
  * Return: On success a pointer path, Otherwise NULL.
  */
-char *findPath(char *av)
+char *findPath(char *av, char **argv, int i)
 {
 	char *token, *tmp, *dir, *duplicate;
 	int x, check = 0;
@@ -84,8 +86,10 @@ char *findPath(char *av)
 	}
 	if (check == 0)
 	{
-		write(1, "./hsh", 6);
-		write(1, ": No such file or directory\n", 29);
+		_puts(*argv);
+		write(1, ": ", 2);
+		_putchar(i + '0');
+		write(1, ": not found\n", 12);
 		free(duplicate);
 		return (NULL);
 	}
